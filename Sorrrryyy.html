@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Truly Sorry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background: #ff80ab;
+      color: #fff;
+      padding: 40px 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      text-shadow: 2px 2px 0 #f50057;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      text-shadow: 1px 1px 0 #f50057;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+      text-align: left;
+    }
+
+    .section:before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 3px dashed #ff4081;
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    .section h2 {
+      color: #ff4081;
+      margin-top: 0;
+      font-size: 2rem;
+      text-align: center;
+      text-shadow: 1px 1px 0 #ff80ab;
+    }
+
+    .section p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+      margin: 15px 0;
+    }
+
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    .photos img {
+      width: 200px;
+      height: 275px;
+      border: 5px solid #ff4081;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .photos img:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .photos img {
+        width: 150px;
+        height: 150px;
+      }
+      .section h2 {
+        font-size: 1.6rem;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Image Modal Styles */
+    .image-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(255, 192, 203, 0.8);
+      backdrop-filter: blur(5px);
+    }
+
+    .image-modal-content {
+      margin: 5% auto;
+      background: #fff0f5;
+      border-radius: 20px;
+      padding: 20px;
+      width: fit-content;
+      max-width: 90%;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
+      position: relative;
+      animation: popIn 0.4s ease-out;
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .image-modal-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      border: 4px solid #ff69b4;
+      margin-bottom: 15px;
+    }
+
+    .image-modal-caption {
+      font-size: 1.2rem;
+      color: #d81b60;
+      background: #ffe4ec;
+      padding: 10px;
+      border-radius: 10px;
+      font-family: 'Comic Neue', cursive;
+    }
+
+  .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.1rem;
+  font-family: 'Comic Neue', cursive;
+  background: #ffe4ec;
+  border: 2px dashed #ff80ab;
+  border-radius: 8px;
+  color: #d81b60;
+  cursor: pointer;
+  padding: 6px 12px;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, color 0.3s ease, background 0.3s ease;
+  z-index: 1001;
+}
+
+.close-btn:hover {
+  background: #ffd5e5;
+  color: #ad1457;
+  transform: rotate(-3deg) scale(1.05);
+  animation: wiggle 0.4s ease-in-out;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>I'm Truly Sorry</h1>
+    <p>A heartfelt apology to you!</p>
+  </header>
+
+  <main>
+    <!-- Letter Section -->
+    <section class="section letter">
+      <h2>A Letter for You</h2>
+      <p>Dear Pavitra Huddar</p>
+      <p>
+        I know you stay irritated over me, and I truly regret my actions. I'm writing this letter to express my sincere apology.
+        I value every moment we share and every smile you bring into my life. Please allow me the chance to make things right
+        and show you how deeply I mean my words and how serious I am!!!
+      </p>
+      <p>With all my heart,<br>Tanish</p>
+    </section>
+
+    <!-- Poem Section -->
+    <section class="section poem">
+      <h2>A Poem for You</h2>
+      <p>
+        I wrote your name upon the sky,<br>
+        But winds of anger made it fly.<br>
+        I called your soul with words so true,<br>
+        But silence only answered too.<br>
+        Forgive these flaws I can’t erase,<br>
+        Let love once more our lives embrace.<br>
+        For in your heart my home remains,<br>
+        Beyond these tears and past these pains.<br>
+        (Kinda bad at this but I tried ahem.)
+      </p>
+    </section>
+
+    <!-- Photos Section -->
+    <section class="section photos">
+      <h2>I'm Solly Again!</h2>
+      <p>These are some of our <span style="color: #d81b60;"><b>UNIQUEE</b></span> memories✨(click to open the pic with a lil msg and on top right corner you can see a little button "close" xD, press it after you've read a memory and conitnuee!)</p>
+      <div>
+        <img src="./rimg1.jpg" alt="Memory 1" onclick="openModal(this.src, 'SORRYYY 😭🥺(damn look at this innocent angry bird, she still has the same anger, but that only appears infront of me 💀 SHES A CUTIEEE ahhhefsdj!)')">
+        <img src="./2.webp" alt="Memory 2" onclick="openModal(this.src, 'The trend we decided to try xD, I never thought id be doing this, and it was also gooddd 🌹')">
+        <img src="./img3.jpg" alt="Memory 3" onclick="openModal(this.src, 'This pic is sooo epic! ahem you actually look good in anything u wear frr!')">
+        <img src="./4.jpg" alt="Memory 4" onclick="openModal(this.src, 'The greatest duo of all time 😤xD')">
+        <img src="./5.jpg" alt="Memory 5" onclick="openModal(this.src, 'Me with that one gundi who is beautiful asf, she rules over me so yeah 🫠😮‍💨')">
+        <img src="./6.jpg" alt="Memory 6" onclick="openModal(this.src, 'Plessse accept mah sorry ;-; this took too many godly amount of efforts to make and it was harddd😶‍🌫️(ahem ignore the gun im showing in pic uojifjj )')">
+        <img src="./7.jpg" alt="Memory 7" onclick="openModal(this.src, 'The day we went to BESCOM industry, after allll our trip, after everyone went home, there were we both 😂having chats near National clg, I was like iruuu Supi ge snap kalstini 😂U eating pani puri and me eating potato twisters..!!')">
+        <img src="./8.jpg" alt="Memory 8" onclick="openModal(this.src, 'In Mantri mall !!🥲well i had to come at that time to see ya, but it was WORTH IT!! u were lit adorable 😂all that make up to look hot but u looked cute asf (ahem pushpa and sanjana were there and i was shyyy asf...!)')">
+        <img src="./9.jpg" alt="Memory 9" onclick="openModal(this.src, 'From the kinderjoy I gifted you😂I dont know if u still have it 🥀')">
+        <img src="./img10.jpg" alt="Memory 9" onclick="openModal(this.src, 'Feb 28, Final day of exam and you were like ello hogona? only us two, we`ll go somewhere! Damn that day was a turly good day, We went to church street roamed around went to comic shop and u picked this shirt for mee ig! and the pizza (i even fed you 😶‍🌫️ufhsdijk damn that was the 1st time i fed anyone ahemmm!! it was very good day!)')">
+        <img src="./img11.jpg" alt="Memory 9" onclick="openModal(this.src, 'When Bro wants you to be in game lobby to play games, but then theres her wanting to watch series with me 😂this was epic, (I choose to watch movie coz shes always first for me!!)')">
+        <img src="./img12.jpg" alt="Memory 9" onclick="openModal(this.src, 'Literally You blushing 😂when we were on our way to the tea shop, i was just teasing you about something and u wouldnt stop blushing 😂😂ishh big fan madamm!')">
+        <img src="./Potato.png" alt="Memory 9" onclick="openModal(this.src, 'AHH that dayy wiehfu I still remember 3 whole days I wasnt able to control my smile blush and shyness ngl, this pic ahem you wanted to see me 😂so I had to turn on the lights and turn on my video for mah cutie madam! xD haye how can you think u are ugly in this pic! u are literally soooo damn adorable pavitraaaaaaifuivj!!')">
+        <img src="./ss1.png" alt="Memory 9" onclick="openModal(this.src, 'Please zoom to read!, This is where it all started!! The 1st ss on the top, damn you really put that much efforts in me 🫠and its the 1st time someone did soo much for me fr, even the 2nd! 3rd and 4th is literally you explaining ur plan and dreams with me 😭ahhh yaar so lovely! 5th 💀u were like u ar the guy so ask me, and i did hfuij ahem! 6th is just you being the cute you! also ahem i tried idk to do collage anol ;-;..! ')">
+        <img src="./ss2.png" alt="Memory 9" onclick="openModal(this.src, 'You literally were like im not innocent 😂I can flirt dirty and that day u made me wait so much and found reels 😂(ahem my net wasnt working well or ig it was discord)')">
+        <img src="./ss3.png" alt="Memory 9" onclick="openModal(this.src, 'Remember you kept calling me for every 5 mins 😂 even tho we talked and cut the call, right after 10-15 mins u used to call me again😂omgg thats why later I tried smthg I downloaded this software and connected my mobile, so if you call me in mobile, I would be able to talk to you from laptop and pick calls 😂efforts hehe !')">
+        <img src="./ss4.png" alt="Memory 9" onclick="openModal(this.src, 'This screenshot 😂I was literally shocked why are u being so angry that day, this is the day you confessed to me, 1st of feb 2025! I woke up late and you were waiting 😂 ahem u were angry coz I was replying late 💀then evening you called and told it uhaefjoi BUTTERFLIES!')">
+        <img src="./ss5.jpg" alt="Memory 9" onclick="openModal(this.src, 'Not sure should I add this, but lastly, these were your 2 wishes :) , I seriously work hard because of you fr, Its hard to explain and I cant even do it here xD, well and the 2nd wish, I cant stop loving you and the amount of my love will never decrease ever, big words but, I know I can do it 🙃🌹')">
+      </div>
+    </section>
+
+    <!-- Promises Section -->
+    <section class="section promise">
+      <h2>Promises</h2>
+      <p>
+        I promise to be better, to listen more, and to cherish you every day. I will work hard to regain your trust and
+        show you how much you mean to me. You are my everything, and I will do whatever it takes to make things right.
+      </p>
+    </section>
+  </main>
+
+  <!-- Image Modal -->
+  <div id="imgModal" class="image-modal">
+    <div class="image-modal-content">
+      <span class="close-btn" onclick="closeModal()">✧ close ✧</span>
+      <img id="modalImage" src="" alt="Full image">
+      <div class="image-modal-caption" id="modalCaption">This is a cute caption ❤️</div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function openModal(src, caption) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("modalImage");
+      const modalCaption = document.getElementById("modalCaption");
+
+      modal.style.display = "block";
+      modalImg.src = src;
+      modalCaption.textContent = caption || "A beautiful memory ❤️";
+    }
+
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+
+    window.addEventListener('click', function(event) {
+      const modal = document.getElementById("imgModal");
+      if (event.target === modal) closeModal();
+    });
+  </script>
+
+</body>
+</html>
